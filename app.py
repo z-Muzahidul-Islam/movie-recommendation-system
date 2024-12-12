@@ -1,5 +1,5 @@
 import streamlit as st
-import pickle
+import joblib
 import pandas as pd
 import requests
 
@@ -29,8 +29,8 @@ def recommend(movie):
 
 
 
-movies_dict = pickle.load(open('artifacts/movies_dict.pkl', 'rb'))
-similarity = pickle.load(open('artifacts/similarity.pkl', 'rb'))
+movies_dict = joblib.load(open('artifacts/movies_dict.joblib', 'rb'))
+similarity = joblib.load(open('artifacts/similarity.joblib', 'rb'))
 movies = pd.DataFrame(movies_dict)
 
 
